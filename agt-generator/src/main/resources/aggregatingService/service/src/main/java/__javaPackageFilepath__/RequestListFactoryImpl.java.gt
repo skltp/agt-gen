@@ -21,7 +21,7 @@ import se.skltp.agp.service.api.RequestListFactory;
 public class RequestListFactoryImpl implements RequestListFactory {
 
 	private static final Logger log = LoggerFactory.getLogger(RequestListFactoryImpl.class);
-	private static final ThreadSafeSimpleDateFormat df = new ThreadSafeSimpleDateFormat("YYYYMMDDhhmmss");
+	private static final ThreadSafeSimpleDateFormat df = new ThreadSafeSimpleDateFormat("yyyyMMddhhmmss");
 
 	/**
 	 * Filtrera svarsposter från i EI (ei-engagement) baserat parametrar i ${ext.schemaArtifactId} requestet (req).
