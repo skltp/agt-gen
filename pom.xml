@@ -29,12 +29,19 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-    <groupId>se.skltp.tools.agt-gen</groupId>
-    <artifactId>agt-gen-parent</artifactId>
-	    <version>1.0.0-SNAPSHOT</version>
-	    <packaging>pom</packaging>
-	    <name>agt-gen-parent</name>
+	<groupId>se.skltp.tools.agt-gen</groupId>
+	<artifactId>agt-gen-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>agt-gen-parent</name>
     <url>http://skltp.se</url>
+
+	<scm>
+		<url>http://github.com/skltp/agt-gen</url>
+		<connection>scm:git:git://github.com/skltp/agt-gen.git</connection>
+		<developerConnection>scm:git:git://github.com/skltp/agt-gen.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
 	<modules>
 		<module>agt-generator</module>
