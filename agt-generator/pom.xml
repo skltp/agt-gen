@@ -44,8 +44,8 @@
     <dependency>
       <groupId>org.soitoolkit.tools.generator</groupId>
       <artifactId>soitoolkit-generator</artifactId>
-		  <version>${soitoolkit.version}</version>
-	  </dependency>
+      <version>${soitoolkit.version}</version>
+    </dependency>
 
       <dependency>
           <groupId>junit</groupId>

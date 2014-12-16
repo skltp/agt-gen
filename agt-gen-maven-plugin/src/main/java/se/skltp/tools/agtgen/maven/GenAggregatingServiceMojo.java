@@ -25,10 +25,10 @@ import java.net.URL;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.soitoolkit.tools.generator.AggregatingServiceGenerator;
 import org.soitoolkit.tools.generator.Generator;
 import org.soitoolkit.tools.generator.model.ModelFactory;
 import org.soitoolkit.tools.generator.model.enums.MuleVersionEnum;
+import se.skltp.tools.agtgen.generator.AggregatingServiceGenerator;
 
 /**
  * Goal for creating an new Integration Component

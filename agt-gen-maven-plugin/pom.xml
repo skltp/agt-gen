@@ -36,6 +36,12 @@
 
   <dependencies>
 
+      <dependency>
+          <groupId>org.soitoolkit.tools.generator</groupId>
+          <artifactId>soitoolkit-generator</artifactId>
+          <version>${soitoolkit.version}</version>
+      </dependency>
+
     <dependency>
       <groupId>se.skltp.tools.agt-gen</groupId>
       <artifactId>agt-generator</artifactId>

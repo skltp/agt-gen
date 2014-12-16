@@ -68,7 +68,7 @@ public class AggregatingServiceGeneratorTest {
 	@Test
 	public void testAggregatingServices1() throws IOException {
 
-		doTestAggregatingServices("riv.crm.requeststatus", "GetAggregatedRequestActivities", MuleVersionEnum.MULE_3_3_0, STANDALONE_DEPLOY);
+		doTestAggregatingServices("riv.crm.requeststatus", "GetAggregatedRequestActivities", MuleVersionEnum.MULE_3_5_0, STANDALONE_DEPLOY);
 
 	}
 
@@ -79,7 +79,7 @@ public class AggregatingServiceGeneratorTest {
 	@Test
 	public void testAggregatingServices2() throws IOException {
 
-		doTestAggregatingServices("riv.clinicalprocess.activity.actions", "GetAggregatedActivity", MuleVersionEnum.MULE_3_3_0, STANDALONE_DEPLOY);
+		doTestAggregatingServices("riv.clinicalprocess.activity.actions", "GetAggregatedActivity", MuleVersionEnum.MULE_3_5_0, STANDALONE_DEPLOY);
 
 		/*
 		MuleVersionEnum[] muleVersions = MuleVersionEnum.values();
