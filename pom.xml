@@ -31,7 +31,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>se.skltp.tools.agt-gen</groupId>
 	<artifactId>agt-gen-parent</artifactId>
-	<version>1.0.0-M7</version>
+	<version>1.0.0-M8-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>agt-gen-parent</name>
     <url>http://skltp.se</url>
