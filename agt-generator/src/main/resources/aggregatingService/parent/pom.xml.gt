@@ -26,9 +26,10 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <name>${parentPom}-parent</name>
 
     <scm>
-        <connection>scm:svn:https://skltpservices.googlecode.com/svn/AggregatingServices/${ext.domainId}/${artifactId}/trunk</connection>
-        <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AggregatingServices/${ext.domainId}/${artifactId}/trunk</developerConnection>
-        <url>https://skltpservices.googlecode.com/svn/AggregatingServices/${ext.domainId}/${artifactId}/trunk</url>
+        <connection>scm:git:git://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</connection>
+        <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</developerConnection>
+        <url>https://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</url>
+        <tag>HEAD</tag>
     </scm>
 
     <modules>

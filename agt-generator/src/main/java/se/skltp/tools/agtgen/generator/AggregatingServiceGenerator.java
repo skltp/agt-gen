@@ -50,7 +50,7 @@ public class AggregatingServiceGenerator implements Generator {
         String groupId = "se.skltp.aggregatingservices." + domainId;
         String serviceName = artifactId;
 
-        outputFolder = outputFolder + "/" + domainId + "/" + artifactId + "/trunk";
+        outputFolder = outputFolder + "/" + domainId + "." + artifactId;
         if (outputFolderSuffix != null) {
             outputFolder += "/" + outputFolderSuffix;
         }

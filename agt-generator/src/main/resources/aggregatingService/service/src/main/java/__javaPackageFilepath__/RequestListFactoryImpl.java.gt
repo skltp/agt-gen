@@ -94,11 +94,13 @@ public class RequestListFactoryImpl implements RequestListFactory {
 		for (Entry<String, List<String>> entry : sourceSystem_pdlUnitList_map.entrySet()) {
 
 			String sourceSystem = entry.getKey();
-            ${ext.schemaArtifactId}Type request = new ${ext.schemaArtifactId}Type();
 
 <% if (!ext.genSchema) { %>
             // TODO: CHANGE GENERATED SAMPLE CODE - START
             if (1==1) throw new UnsupportedOperationException("Not yet implemented");
+<% } %>
+            ${ext.schemaArtifactId}Type request = new ${ext.schemaArtifactId}Type();
+<% if (!ext.genSchema) { %>
             /*
 <% } %>
 			if (log.isInfoEnabled()) log.info("Calling source system using logical address {} for subject of care id {}", sourceSystem, originalRequest.getSubjectOfCareId());
