@@ -9,3 +9,6 @@
 .idea
 target
 soi_toolkit_generator_plugin_default_preferences.properties.no-git
+.classpath
+org.eclipse.jdt.core.prefs
+.project
