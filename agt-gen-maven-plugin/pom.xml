@@ -19,13 +19,16 @@
  *
  *   Boston, MA 02111-1307  USA
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<parent>
+  <parent>
     <groupId>se.skltp.tools.agt-gen</groupId>
-		<artifactId>agt-gen-parent</artifactId>
-		<version>1.0.0-M8-SNAPSHOT</version>
-	</parent>
+    <artifactId>agt-gen-parent</artifactId>
+    <version>1.0.0-M8-SNAPSHOT</version>
+  </parent>
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>agt-gen-maven-plugin</artifactId>
@@ -35,12 +38,11 @@
   <url>http://skltp.se</url>
 
   <dependencies>
-
-      <dependency>
-          <groupId>org.soitoolkit.tools.generator</groupId>
-          <artifactId>soitoolkit-generator</artifactId>
-          <version>${soitoolkit.version}</version>
-      </dependency>
+    <dependency>
+      <groupId>org.soitoolkit.tools.generator</groupId>
+      <artifactId>soitoolkit-generator</artifactId>
+      <version>${soitoolkit.version}</version>
+    </dependency>
 
     <dependency>
       <groupId>se.skltp.tools.agt-gen</groupId>
@@ -53,17 +55,16 @@
       <artifactId>maven-plugin-api</artifactId>
       <version>2.0</version>
     </dependency>
-
   </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-plugin-plugin</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
         <version>3.2</version>
-			</plugin>
-		</plugins>
-	</build>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
