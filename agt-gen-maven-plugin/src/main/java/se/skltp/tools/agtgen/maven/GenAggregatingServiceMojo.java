@@ -56,14 +56,14 @@ public class GenAggregatingServiceMojo extends AbstractMojo {
 
 	/**
      * Version.
-     * @parameter expression="${version}" default-value="1.0.0-SNAPSHOT"
+     * @parameter expression="${version}" default-value="1.0.0-RC1-SNAPSHOT"
      * @optional
      */
     private String version;
 
 	/**
      * Mule version.
-     * @parameter expression="${muleVersion}" default-value="3.5.0"
+     * @parameter expression="${muleVersion}" default-value="3.7.0"
      * @optional
      */
     private String muleVersion;
@@ -97,7 +97,7 @@ public class GenAggregatingServiceMojo extends AbstractMojo {
     private String schemaArtifactId;
 
     /**
-     * If not generate default schema, then under what top-folder will the schema be found, e.g. "TD_REQUESTSTATUS_1_0_1_R".
+     * If not generate default schema, then under what top-folder will the schema be found, e.g. "clinicalprocess_healthcond_actoutcome".
      * @parameter expression="${schemaTopFolder}"
      * @optional
      */
@@ -107,22 +107,22 @@ public class GenAggregatingServiceMojo extends AbstractMojo {
 
     	
         getLog().info("");
-        getLog().info("=======================================");
-        getLog().info("= Creating an new Aggregating Service =");
-        getLog().info("=======================================");
+        getLog().info("========================================");
+        getLog().info("= Generating a new Aggregating Service =");
+        getLog().info("========================================");
         getLog().info("");
-        getLog().info("ARGUMENTS:");
+        getLog().info("arguments:");
         getLog().info("(change an arg by suppling: -Darg=value):");
         getLog().info("");
-        getLog().info("outDir=\"" + outDir.getPath());
-        getLog().info("artifactId=\"" + artifactId + "\"");
-        getLog().info("domainId=\"" + domainId + "\"");
-        getLog().info("version=\"" + version + "\"");
-        getLog().info("muleVersion=\"" + muleVersion + "\"");
-        getLog().info("groovyModel=\"" + groovyModel + "\"");
-        getLog().info("genSchema=\"" + genSchema + "\"");
-        getLog().info("schemaArtifactId=\"" + schemaArtifactId + "\"");
-        getLog().info("schemaTopFolder=\"" + schemaTopFolder + "\"");
+        getLog().info("outDir           = \"" + outDir.getPath());
+        getLog().info("artifactId       = \"" + artifactId + "\"");
+        getLog().info("domainId         = \"" + domainId + "\"");
+        getLog().info("version          = \"" + version + "\"");
+        getLog().info("muleVersion      = \"" + muleVersion + "\"");
+        getLog().info("groovyModel      = \"" + groovyModel + "\"");
+        getLog().info("genSchema        = \"" + genSchema + "\"");
+        getLog().info("schemaArtifactId = \"" + schemaArtifactId + "\"");
+        getLog().info("schemaTopFolder  = \"" + schemaTopFolder + "\"");
         getLog().info("");
 
         initGroovyModel();

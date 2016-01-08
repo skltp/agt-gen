@@ -6,37 +6,40 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 [soi-toolkit.gen.createDate=${xmlTimestamp}]
 [soi-toolkit.gen.artifactId=${artifactId}]
 -->
-<project 
-	xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+ <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>${superpomGroupId}</groupId>
-        <artifactId>${superpomArtifactId}</artifactId>
-        <version>${superpomVersion}</version>
-    </parent>
-    
-    <groupId>${groupId}</groupId>
-    <artifactId>${parentPom}-parent</artifactId>
-    <version>${version}</version>
-    <packaging>pom</packaging>
-    <name>${parentPom}-parent</name>
+ <parent>
+  <groupId>se.skltp.commons</groupId>
+  <artifactId>skltp-commons-mule-parent</artifactId>
+  <version>1.1.0</version>
+ </parent>
 
-    <scm>
-        <connection>scm:git:git://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</connection>
-        <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</developerConnection>
-        <url>https://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</url>
-        <tag>HEAD</tag>
-    </scm>
+ <groupId>${groupId}</groupId>
+ <artifactId>${parentPom}-parent</artifactId>
+ <version>${version}</version>
+ <packaging>pom</packaging>
+ <name>${parentPom}-parent</name>
+ 
+ <properties>
+  <mule.version>3.7.0</mule.version>    
+  <skltp.agp.version>1.4.0</skltp.agp.version>
+ </properties>
 
-    <modules>
-      <module>${artifactId}</module>
-      <module>${artifactId}-teststub</module>
-<% if (!ext.genSchema) { %>
-      <module>${artifactId}-schemas</module>
-<% } %>
-    </modules>
-  </project>
+ <scm>
+  <connection>scm:git:git://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</connection>
+  <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</developerConnection>
+  <url>https://github.com/skltp-aggregerandetjanster/${ext.domainId}.${artifactId}.git</url>
+  <tag>HEAD</tag>
+ </scm>
+
+ <modules>
+  <module>${artifactId}</module>
+  <module>${artifactId}-schemas</module>
+  <module>${artifactId}-teststub</module>
+ </modules>
+</project>

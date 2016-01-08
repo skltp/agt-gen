@@ -34,6 +34,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.soitoolkit.tools.generator.model.enums.DeploymentModelEnum;
 import org.soitoolkit.tools.generator.model.enums.MuleVersionEnum;
 import org.soitoolkit.tools.generator.util.PreferencesUtil;
@@ -43,6 +45,9 @@ public class AggregatingServiceGeneratorTest {
 
     private static final String TEST_OUT_FOLDER = PreferencesUtil.getDefaultRootFolder() + "/jUnitTests";
     private static final String VERSION = "1.0.0-SNAPSHOT";
+    
+    
+    private static final Logger log = LoggerFactory.getLogger(AggregatingServiceGeneratorTest.class);
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -62,12 +67,12 @@ public class AggregatingServiceGeneratorTest {
 
     @Test
     public void testGenerateGetAggregatedRequestActivities() throws IOException {
-        doTestAggregatingServices("riv.crm.requeststatus", "GetAggregatedRequestActivities", MuleVersionEnum.MULE_3_5_0, STANDALONE_DEPLOY);
+        doTestAggregatingServices("riv.crm.requeststatus", "GetAggregatedRequestActivities", MuleVersionEnum.MULE_3_7_0, STANDALONE_DEPLOY);
     }
 
     @Test
     public void testGenerateGetAggregatedActivities() throws IOException {
-        doTestAggregatingServices("riv.clinicalprocess.activity.actions", "GetAggregatedActivities", MuleVersionEnum.MULE_3_5_0, STANDALONE_DEPLOY);
+        doTestAggregatingServices("riv.clinicalprocess.activity.actions", "GetAggregatedActivities", MuleVersionEnum.MULE_3_7_0, STANDALONE_DEPLOY);
     }
 
     private void doTestAggregatingServices(String domainId, String artifactId, MuleVersionEnum muleVersion, DeploymentModelEnum deploymentModel) throws IOException {
@@ -77,6 +82,7 @@ public class AggregatingServiceGeneratorTest {
     }
 
     private void createAggregationService(String domainId, String artifactId, MuleVersionEnum muleVersion, String projectFolder) throws IOException {
+        log.info("attempted to generate source for {}.{}", domainId, artifactId);
         SystemUtil.delDirs(projectFolder);
         boolean genSchema = true;
         int expectedNoOfFiles1 = 89; // For domain + subdomain
@@ -88,14 +94,17 @@ public class AggregatingServiceGeneratorTest {
         int actualNoOfFiles = SystemUtil.countFiles(projectFolder) - noOfFilesBefore;
         assertTrue("Missmatch in expected number of created files and folders." + " Expected " + expectedNoOfFiles1 + " or " + expectedNoOfFiles2
                 + " but found " + actualNoOfFiles, actualNoOfFiles == expectedNoOfFiles1 || actualNoOfFiles == expectedNoOfFiles2);
+        log.info("successfully generated source for {}.{} in project folder", domainId, artifactId, projectFolder);
     }
 
     private void performMavenBuild(String projectFolder) throws IOException {
         boolean testOk = false;
         
         try {
+            log.info("invoking maven to build {}", projectFolder);
             SystemUtil.executeCommand(BUILD_COMMAND, projectFolder);
             testOk = true;
+            log.debug("successfully invoked maven to build {}", projectFolder);
         } finally {
             // Always try to create eclipsefiles and test reports
             String command = ECLIPSE_AND_TEST_REPORT_COMMAND.replaceAll("studio:studio", "eclipse:eclipse");
@@ -104,6 +113,7 @@ public class AggregatingServiceGeneratorTest {
 
         // If the build runs fine then also perform a clean-command to save GB's of diskspace...
         if (testOk) {
+            log.info("cleaning up project folder {}", projectFolder);
             SystemUtil.executeCommand(CLEAN_COMMAND, projectFolder);
         }
     }
